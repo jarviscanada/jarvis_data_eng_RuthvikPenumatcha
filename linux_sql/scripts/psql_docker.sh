@@ -1,9 +1,9 @@
 #!/bin/sh
 
 # Capture CLI arguments
-cmd=$1
-db_username=$2
-db_password=$3
+export cmd=$1 #Using export so that these parameters are stored even if a child process is later executed
+export db_username=$2
+export db_password=$3
 
 # Start docker
 # Make sure you understand the double pipe operator
@@ -37,7 +37,7 @@ case $cmd in
 	docker volume create pgdata #Creating docker volume to store the data from this container. This is done so any changes made to the container will be persisted in the volume.
 
   # Start the container
-	docker run --name jrvs-psql -e POSTGRES_PASSWORD=db_password  -d -v pgdata:/var/lib/postgresql/data -p 5432:5432 postgres:9.6-alpine
+	docker run --name jrvs-psql -e POSTGRES_USERNAME=db_username -e POSTGRES_PASSWORD=db_password  -d -v pgdata:/var/lib/postgresql/data -p 5432:5432 postgres:9.6-alpine
 
   # Make sure you understand what's `$?`
 	exit $?
