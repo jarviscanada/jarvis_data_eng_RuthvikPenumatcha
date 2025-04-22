@@ -37,7 +37,7 @@ case $cmd in
 	docker volume create pgdata #Creating docker volume to store the data from this container. This is done so any changes made to the container will be persisted in the volume.
 
   # Start the container
-	docker run --name jrvs-psql -e POSTGRES_USERNAME=db_username -e POSTGRES_PASSWORD=db_password  -d -v pgdata:/var/lib/postgresql/data -p 5432:5432 postgres:9.6-alpine
+	docker run --name jrvs-psql -e POSTGRES_USER=db_username -e POSTGRES_PASSWORD=db_password  -d -v pgdata:/var/lib/postgresql/data -p 5432:5432 postgres:9.6-alpine
 
   # Make sure you understand what's `$?`
 	exit $?
