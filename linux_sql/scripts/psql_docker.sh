@@ -1,15 +1,12 @@
 #!/bin/sh
 
 # Capture CLI arguments
-export cmd=$1 #Using export so that these parameters are stored even if a child process is later executed
-export db_username=$2
-export db_password=$3
+cmd=$1
+db_username=$2
+db_password=$3
 
 # Start docker
-# Make sure you understand the double pipe operator
 sudo systemctl status docker || sudo systemctl start docker # If docker is not started, then start docker
-
-# Command to remove the container: docker container rm jrvs-psql
 
 # Check container status (try the following cmds on terminal)
 docker container inspect jrvs-psql
@@ -39,7 +36,7 @@ case $cmd in
   # Start the container
 	docker run --name jrvs-psql -e POSTGRES_USER=db_username -e POSTGRES_PASSWORD=db_password  -d -v pgdata:/var/lib/postgresql/data -p 5432:5432 postgres:9.6-alpine
 
-  # Make sure you understand what's `$?`
+  # Exits based on the status code of the previous command
 	exit $?
 	;;
 
