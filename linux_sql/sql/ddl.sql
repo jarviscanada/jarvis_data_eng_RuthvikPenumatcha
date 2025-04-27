@@ -1,6 +1,7 @@
-\c host_agent; -- Connecting to host_agent database
+-- Connecting to host_agent database
+\c host_agent;
 
--- Creating host_info table if doesn't exist
+-- Creating host_info table if it doesn't exist in host_agent database
 CREATE TABLE IF NOT EXISTS PUBLIC.host_info
 (
     id               SERIAL NOT NULL,
@@ -16,7 +17,7 @@ CREATE TABLE IF NOT EXISTS PUBLIC.host_info
     CONSTRAINT host_info_un UNIQUE (hostname)
 );
 
--- Creating host_usage table if it doesn't exist
+-- Creating host_usage table if it doesn't exist in host_agent database
 CREATE TABLE IF NOT EXISTS PUBLIC.host_usage
 (
     "timestamp"    TIMESTAMP NOT NULL,
@@ -30,4 +31,5 @@ CREATE TABLE IF NOT EXISTS PUBLIC.host_usage
         host_info(id)
 );
 
-\dt; --Printing the list of tables in host_agent database
+--Printing the list of tables in host_agent database
+\dt;
