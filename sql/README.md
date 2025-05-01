@@ -3,6 +3,7 @@
 # Tables
 
 - Table Structure of `cd.members`
+
 | Attribute | Data Type | Constraint |
 |-----------|-----------|------------|
 | memid | INTEGER | PRIMARY KEY |
@@ -15,6 +16,7 @@
 | joindate | TIMESTAMP | NOT NULL |
 
 - Table Structure of `cd.bookings`
+
 | Attribute | Data Type | Constraint |
 |----------|-----------|------------|
 | bookid | INTEGER | PRIMARY KEY |
@@ -24,6 +26,7 @@
 | slots | INTEGER | NOT NULL |
 
 - Table Structure of `cd.facilities`
+
 | Attribute | Data Type | Constraint |
 |-----------|-----------|------------|
 | facid | INTEGER | PRIMARY KEY |
