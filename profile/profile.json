@@ -82,6 +82,7 @@
       "React",
       "Google Cloud Platform (GCP)",
       "Next.js",
+      "Scikit-learn/Matplotlib",
       "Postman"
     ],
     "familiar": [
@@ -105,6 +106,8 @@
       "HTML",
       "CSS",
       "Agile/Scrum",
+      "Pandas/NumPy",
+      "Tensorflow/PyTorch",
       "Maven",
       "Git",
       "REST APIs"

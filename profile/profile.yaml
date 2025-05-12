@@ -23,6 +23,8 @@ skills:
     - HTML
     - CSS
     - Agile/Scrum
+    - Pandas/NumPy
+    - Tensorflow/PyTorch
     - Maven
     - Git
     - REST APIs
@@ -35,6 +37,7 @@ skills:
     - React
     - Google Cloud Platform (GCP)
     - Next.js
+    - Scikit-learn/Matplotlib
     - Postman
   # At least 5 skills
   familiar:
