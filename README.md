@@ -4,7 +4,7 @@ I hold a Bachelor's degree in Computer Engineering with a specialization in Soft
 
 ## Skills
 
-**Proficient:** Java, Python, JavaScript, Node.js, Express.js, Linux/Bash, RDBMS/SQL, NoSQL/MongoDB, HTML, CSS, Agile/Scrum, Pandas/NumPy, Tensorflow/PyTorch, Maven, Git, REST APIs
+**Proficient:** Java, Python, JavaScript, Node.js, Express.js, Linux/Bash, RDBMS/SQL, NoSQL/MongoDB, HTML, CSS, Agile/Scrum, Pandas/NumPy, TensorFlow/PyTorch, Maven, Git, REST APIs
 
 **Competent:** Spark, Hive, Hadoop, Docker, React, Google Cloud Platform (GCP), Next.js, Scikit-learn/Matplotlib, Postman
 
