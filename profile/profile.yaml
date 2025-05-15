@@ -5,7 +5,7 @@ github_repo_root_url: https://github.com/jarviscanada/jarvis_data_eng_RuthvikPen
 
 # Introduce yourself, your academic and professional background.
 # What excites you about the software industry and your passion. At least 80 words
-summary: I hold a Bachelor's degree in Computer Engineering with a specialization in Software Engineering, and a Master's degree in Electrical and Computer Engineering with a specialization in Artificial Intelligence from Toronto Metropolitan University (formerly Ryerson University). My academic background has equipped me with deep technical expertise and problem-solving skills. Throughout my academic journey, I developed a keen interest in Data Engineering, DevOps, and Software Development, and I have gained hands-on experience in these areas by working on both academic and personal projects. I worked as a research assistant at Toronto Metropolitan University, where I contributed to the development of a novel bias measurement metric for Large Language Models. I utilized tools and technologies such as Python, PyTorch, NumPy, Pandas, and Matplotlib to process, analyze, and implement the solution. Additionally, I have worked on various personal projects where I used tools such as FastAPI, Pandas, and Spark SQL to analyze data extracted from web sources. These projects have enhanced my skills in data analysis, data manipulation, and building scalable systems. I am currently seeking opportunities in Data Engineering, DevOps, or back-end development, where I can apply my technical skills, passion for continuous learning, and collaborative spirit to solve complex technical challenges.
+summary: I hold a Bachelor's degree in Computer Engineering with a specialization in Software Engineering, and a Master's degree in Electrical and Computer Engineering with a specialization in Artificial Intelligence from Toronto Metropolitan University (formerly Ryerson University). My academic background has equipped me with strong technical expertise and problem-solving skills. Throughout my academic journey, I developed a keen interest in Data Engineering, DevOps, and Software Development. As a research assistant at Toronto Metropolitan University, I helped develop a novel bias measurement metric for Large Language Models using Python, PyTorch, NumPy, Pandas, and Matplotlib. I've also built personal projects using FastAPI, Pandas, and Spark SQL to analyze web-sourced data, strengthening my skills in data manipulation and scalable system design. I am currently seeking opportunities in Data Engineering, DevOps, or back-end development, where I can apply my expertise and passion for learning to solve complex technical challenges.
 
 # Group your skills by level.
 # Your skills can be anything software related (e.g. language, frameworks, methodologies, software, etc.).
@@ -19,15 +19,15 @@ skills:
     - Express.js
     - Linux/Bash
     - RDBMS/SQL
+    - Pandas/NumPy
     - NoSQL/MongoDB
     - HTML
     - CSS
     - Agile/Scrum
-    - Pandas/NumPy
+    - REST APIs
     - TensorFlow/PyTorch
     - Maven
     - Git
-    - REST APIs
   # At least 5 skills
   competent:
     - Spark
@@ -55,7 +55,7 @@ jarvis_projects:
     git_url: "/linux_sql"
     # The project description allows hiring managers to understand your project and technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
     # The project description must start with an action verb (https://bit.ly/3guO98u)
-    description: The Linux Cluster Monitoring Resource app is a Minimum Viable Product (MVP) that has been developed for the Linux Cluster Administration (LCA) team at Jarvis. It has been developed to allow the client to monitor the system specifications and resource usage information of 10 Linux clusters, which communicate with each other through a network switch. This project has been implemented by creating a PostgreSQL database instance on a Docker container to store hardware specifications and resource usage information. Shell scripts were then created to handle various tasks, such as creating a Docker container and inserting data into SQL tables. Moreover, the crontab feature on Linux has been used to automate the process of executing a shell script to store resource usage information of a Linux cluster every minute. Finally, Git has been used for Version Control.
+    description: The Linux Cluster Monitoring Resource app has been developed for the Linux Cluster Administration (LCA) team at Jarvis to monitor the system specifications and resource usage information across 10 Linux clusters. This project has been implemented by creating a PostgreSQL database instance on a Docker container to store hardware specifications and resource usage information. Shell scripts were created to handle various tasks, such as managing the container setup, and data insertion. Crontab was used to automate data collection every minute, and Git was used for version control. Through automating data collection and centralizing monitoring, the system reduces manual overhead and enhances decision-making for administrators.
       # - name: "Core Java Apps"
       # git_url: "/core_java"
       # description:
@@ -86,7 +86,7 @@ highlighted_projects:
     #URL is optional
     # git_url: "https://github.com/jarviscanada/jarvis_profile_builder"
     # The project description must start with an action verb (https://bit.ly/3guO98u)
-    description: Performed analysis of used car sales in Europe over the past 20 years using Google Cloud Platform (GCP) and Spark SQL. Sourced a dataset containing over 3 million rows from Kaggle. Conducted data cleaning to remove irrelevant columns and rows containing null or empty values. Wrote Spark SQL queries to identify trends such as the most popular car makes and models across various price ranges, and determined the least preferred vehicles by users over the past 5, 10, and 20 years.
+    description: Performed analysis of used car sales in Europe over the past 20 years using GCP and Spark SQL. Utilized a comprehensive dataset containing over 3 million records, including attributes such as car make, model, price, mileage, fuel type, transmission, and registration year. Conducted data cleaning to remove irrelevant columns and rows containing null or empty values. Wrote Spark SQL queries to identify trends such as the most popular car makes and models across various price ranges, and determined the least preferred vehicles by users over the past 5, 10, and 20 years.
   - name: "Schema-Tune: Noise-Driven Bias Mitigation in Transformer-based Language Models"
     git_url: "https://github.com/omidoos/Schema-Tune"
     description: Co-authored the research paper and helped successfully implement the Schema-Tune framework to reduce biases in large language models. The framework introduces curated and adapted noises to the input embeddings of language models to challenge the model's embedded stereotypes. I utilized various tools such as Python, PyTorch, Pandas, NumPy, and Matplotlib to help train the models and evaluate the performance of the models. The paper has been published at the ACML 2024 conference.
@@ -105,7 +105,7 @@ professional_experience:
     company: "Jarvis"
     duration: "April 2025-present"
     # The project description must start with an action verb (https://bit.ly/3guO98u)
-    description: "As a software developer, I contribute to multiple projects using technologies such as Linux, Bash scripting, PostgreSQL, Docker, and Git. I play an active role in designing, implementing, and deploying scalable solutions that meet client needs. I collaborate closely with a cross-functional team in an Agile/Scrum environment, participating in sprint planning, daily stand-ups, sprint reviews, and retrospectives."
+    description: "As a software developer, I contributed to multiple projects using technologies such as Linux, Bash scripting, PostgreSQL, Docker, and Git. I played an active role in designing, implementing, and deploying scalable solutions that met client needs. I collaborated closely with a cross-functional team in an Agile/Scrum environment, participating in sprint planning, daily stand-ups, sprint reviews, and retrospectives."
   - title: "Research Assistant"
     company: "Toronto Metropolitan University"
     duration: "September 2024-December 2024"
@@ -121,7 +121,7 @@ education:
     awards_achievements: 
       - "Graduated with Distinction"
       - "Dean's List (2018-2019, 2020-2021, 2021-2022)"
-      - "CGPA: 3.74/4.33"
+        # - "CGPA: 3.74/4.33"
   - school_name: "Toronto Metropolitan University"
     duration: "2023-2024"
     degree: "Master of Engineering"
