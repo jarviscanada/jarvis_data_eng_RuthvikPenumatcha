@@ -27,7 +27,7 @@
       "name": "Big Data Analysis of Used Car Sales in Europe"
     },
     {
-      "description": "Co-authored the research paper and helped successfully implement the Schema-Tune framework to reduce biases in large language models. The framework introduces curated and adapted noises to the input embeddings of language models to challenge the model's embedded stereotypes. I utilized various tools such as Python, PyTorch, Pandas, NumPy, and Matplotlib to help train the models and evaluate the performance of the models. The paper has been published at the ACML 2024 conference.",
+      "description": "Co-authored the research paper and helped successfully implement the Schema-Tune framework to reduce biases in large language models. The framework introduces curated and adapted noises to the input embeddings of language models to challenge the model's embedded stereotypes. I utilized various tools such as Python, PyTorch, Pandas, NumPy, and Matplotlib to help train the models and evaluate their performance. The paper has been published at the ACML 2024 conference.",
       "git_url": "https://github.com/omidoos/Schema-Tune",
       "name": "Schema-Tune: Noise-Driven Bias Mitigation in Transformer-based Language Models"
     },
@@ -43,7 +43,7 @@
   ],
   "jarvis_projects": [
     {
-      "description": "The Linux Cluster Monitoring Resource app has been developed for the Linux Cluster Administration (LCA) team at Jarvis to monitor the system specifications and resource usage information across 10 Linux clusters. This project has been implemented by creating a PostgreSQL database instance on a Docker container to store hardware specifications and resource usage information. Shell scripts were created to handle various tasks, such as managing the container setup, and data insertion. Crontab was used to automate data collection every minute, and Git was used for version control. Through automating data collection and centralizing monitoring, the system reduces manual overhead and enhances decision-making for administrators.",
+      "description": "The Linux Cluster Monitoring Resource app has been developed for the Linux Cluster Administration (LCA) team at Jarvis to monitor the system specifications and resource usage information across 10 Linux clusters. This project has been implemented by creating a PostgreSQL database instance on a Docker container to store hardware specifications and resource usage information. Shell scripts were created to handle various tasks, such as managing the container setup and data insertion. Crontab was used to automate data collection every minute, and Git was used for version control. Through automating data collection and centralizing monitoring, the system reduces manual overhead and enhances decision-making for administrators.",
       "git_url": "/linux_sql",
       "name": "Cluster Monitor"
     }
