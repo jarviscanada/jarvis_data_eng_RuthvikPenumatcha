@@ -1,10 +1,5 @@
    * @throws IllegalArgumentException if a given inputFile is not a file
         throw new IllegalArgumentException("The directory: "+rootDir+" is not valid. Please enter a valid directory as your input.");
       throw new IllegalArgumentException("Expected Input: JavaGrep regex rootPath outFile");
-   * @throws IllegalArgumentException if a given inputFile is not a file
         throw new IllegalArgumentException("The directory: "+rootDir+" is not valid. Please enter a valid directory as your input.");
-      throw new IllegalArgumentException("Expected Input: JavaGrep regex rootPath outFile");
-   * @throws IllegalArgumentException if a given inputFile is not a file
-        throw new IllegalArgumentException("The directory: "+rootDir+" is not valid. Please enter a valid directory as your input.");
-      throw new IllegalArgumentException("Expected Input: JavaGrep regex rootPath outFile");
       throw new IllegalArgumentException("Expected Input: JavaGrep regex rootPath outFile");
