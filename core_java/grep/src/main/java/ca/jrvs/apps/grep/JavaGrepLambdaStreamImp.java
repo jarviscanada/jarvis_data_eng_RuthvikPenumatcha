@@ -32,15 +32,15 @@ public class JavaGrepLambdaStreamImp extends JavaGrepImp {
     }).filter(this::ContainsPattern).collect(Collectors.toList());
 
     //Saving the matchedLines in output file
-    logger.debug("Matched lines: {}", matchedLines);
+    //logger.debug("Matched lines: {}", matchedLines);
     writeToFile(matchedLines);
   }
 
   @Override
   public List<File> listFiles(String rootDir) {
     List<File> list = new ArrayList<>();
-    logger.debug("Current working directory: {}", System.getProperty("user.dir"));
-    logger.debug("Root dir: {}", rootDir);
+    //logger.debug("Current working directory: {}", System.getProperty("user.dir"));
+    //logger.debug("Root dir: {}", rootDir);
 
     try {
       File dir = new File(rootDir);
@@ -53,7 +53,7 @@ public class JavaGrepLambdaStreamImp extends JavaGrepImp {
 
       list = pathStream.collect(Collectors.toList());
 
-      logger.debug("Files list: {}", list);
+      //logger.debug("Files list: {}", list);
       return list;
     }
     catch(Exception e) {
@@ -80,7 +80,7 @@ public class JavaGrepLambdaStreamImp extends JavaGrepImp {
   @Override
   public void writeToFile(List<String> lines) throws IOException {
     //Store the results into output file
-    logger.debug("Writing to file: {}", getOutFile());
+    //logger.debug("Writing to file: {}", getOutFile());
 
     try(BufferedWriter writer = new BufferedWriter(new FileWriter(getOutFile(), true))) {
       lines.stream().forEach(line -> {
