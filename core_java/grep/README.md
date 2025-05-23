@@ -12,7 +12,7 @@ Both methods require three parameters:
 - `<data_loc>`: File directory to recursively search files in
 - `<output_loc>`: Output path to store matching results 
 
-1. Using Maven generated JAR files 
+1. Using Maven-generated JAR files 
 ```shell
 cd core_java/grep
 mvn clean compile package
@@ -42,17 +42,17 @@ writeToFile(matchedLines)
 ```
 
 ## Performance Issue
-The first implementation of the Grep application could not process large input files, and led to `OutOfMemoryError`. This issue is caused due to the limited heap size when the application is run in the JVM. This issue has been resolved with the current implementation, as Streams and Lambda expressions are used to optimize memory usage.
+The first implementation of the Grep application could not process large input files and led to `OutOfMemoryError`. This issue is caused due to the limited heap size when the application is run in the JVM. This issue has been resolved with the current implementation, as Streams and Lambda expressions are used to optimize memory usage.
 
 # Test
 The Grep application has been tested manually by modifying the `Run/Debug Configurations` in IntelliJ IDEA to execute with various pre-defined arguments. Both `JavaGrepImp.java` and `JavaGrepLambdaStreamImp.java` implementations were tested to ensure correct functionality. SLF4J and Log4j were integrated for effective logging and debugging, enabling effective error reporting in the terminal. 
 
 # Deployment
-- This application has been packaged into a JAR file using the Maven command: `mvn clean compile package`
-- A Dockerfile is created to containerize the application
-- The Dockerfile uses Alpine Linux as the base image, copies the JAR file from the local directory into the container, and executes the JAR file
-- Docker image is built locally using the command: `docker build -t ${docker_user}/grep .`
-- Docker image is pushed to Docker Hub using the command: `docker push ${docker_user}/grep`
+- This application has been packaged into a JAR file using the Maven command: `mvn clean compile package`.
+- A Dockerfile is created to containerize the application.
+- The Dockerfile uses Alpine Linux as the base image, copies the JAR file from the local directory into the container, and executes the JAR file.
+- Docker image is built locally using the command: `docker build -t ${docker_user}/grep .`.
+- Docker image is pushed to Docker Hub using the command: `docker push ${docker_user}/grep`.
 
 # Improvements
 In the future, I would like to make the following changes to further improve the functionality of this application.
