@@ -1,0 +1,148 @@
+# Preferred name (Characters only)
+name: "Ruthvik Penumatcha"
+# Your GitHub repo root URL
+github_repo_root_url: https://github.com/jarviscanada/jarvis_data_eng_RuthvikPenumatcha
+
+# Introduce yourself, your academic and professional background.
+# What excites you about the software industry and your passion. At least 80 words
+summary: I hold a Bachelor's degree in Computer Engineering with a specialization in Software Engineering, and a Master's degree in Electrical and Computer Engineering with a specialization in Artificial Intelligence from Toronto Metropolitan University (formerly Ryerson University). My academic background has equipped me with strong technical expertise and problem-solving skills. Throughout my academic journey, I developed a keen interest in Data Engineering, DevOps, and Software Development. As a research assistant at Toronto Metropolitan University, I helped develop a novel bias measurement metric for Large Language Models using Python, PyTorch, NumPy, Pandas, and Matplotlib. I've also built personal projects using FastAPI, Pandas, and Spark SQL to analyze web-sourced data, strengthening my skills in data manipulation and scalable system design. I am currently seeking opportunities in Data Engineering, DevOps, or back-end development, where I can apply my expertise and passion for learning to solve complex technical challenges.
+
+# Group your skills by level.
+# Your skills can be anything software related (e.g. language, frameworks, methodologies, software, etc.).
+skills:
+  # At least 5 skills
+  proficient:
+    - Java
+    - Python
+    - JavaScript
+    - Node.js
+    - Express.js
+    - Linux/Bash
+    - RDBMS/SQL
+    - Pandas/NumPy
+    - NoSQL/MongoDB
+    - HTML
+    - CSS
+    - Agile/Scrum
+    - REST APIs
+    - TensorFlow/PyTorch
+    - Maven
+    - Git
+  # At least 5 skills
+  competent:
+    - Spark
+    - Hive
+    - Hadoop
+    - Docker
+    - React
+    - Google Cloud Platform (GCP)
+    - Next.js
+    - Scikit-learn/Matplotlib
+    - Postman
+  # At least 5 skills
+  familiar:
+    - MATLAB
+    - C
+    - Jenkins
+    - RabbitMQ
+    - gRPC
+    - VHDL
+    - LaTeX
+
+# List of Jarvis projects
+jarvis_projects:
+  - name: "Cluster Monitor"
+    git_url: "/linux_sql"
+    # The project description allows hiring managers to understand your project and technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: The Linux Cluster Monitoring Resource app has been developed for the Linux Cluster Administration (LCA) team at Jarvis to monitor the system specifications and resource usage information across 10 Linux clusters. This project has been implemented by creating a PostgreSQL database instance on a Docker container to store hardware specifications and resource usage information. Shell scripts were created to handle various tasks, such as managing the container setup and data insertion. Crontab was used to automate data collection every minute, and Git was used for version control. Through automating data collection and centralizing monitoring, the system reduces manual overhead and enhances decision-making for administrators.
+  - name: "Java Grep App"
+    git_url: "/core_java/grep"
+    description: "Developed a Java-based tool utilizing object-oriented programming principles, which functions similarly to the grep command on Linux. It recursively traverses a user-provided directory, identifies matching regex patterns the user provides, and stores the results in a file. Utilized Java Streams and Lambda expressions to optimize the performance of the application. Deployed the application by creating a Docker image using a custom Dockerfile. Used Maven for dependency management, and Git for version control."    
+      # - name: "Core Java Apps"
+   # git_url: "/core_java"
+   # description:
+   #   - "Java Grep App: Developed a Java-based tool utilizing object-oriented programming principles, which functions similarly to the grep command on Linux. It recursively traverses a user-provided directory, identifies matching regex patterns the user provides, and stores the results in a file. Utilized Java Streams and Lambda expressions to optimize the performance of the application. Deployed the application by creating a Docker image using a custom Dockerfile. Used Maven for dependency management, and Git for version control."
+      #- "JDBC App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
+      # - "Grep App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
+      # - name: "Springboot App"
+      # git_url: "/springboot"
+      # description: ""
+      # - name: "Python Data Analytics"
+      # git_url: "/python_data_anlytics"
+      # description: ""
+      # - name: "Hadoop"
+      # git_url: "/hadoop"
+      # description: ""
+      # - name: "Spark"
+      # git_url: "/spark"
+      # description: ""
+      # - name: "Cloud/DevOps"
+      # git_url: "/cloud_devops"
+      # description: ""
+
+# List of personal or academic projects
+# Feel free to add more projects
+highlighted_projects:
+    #project name
+  - name: "Big Data Analysis of Used Car Sales in Europe"
+    #URL is optional
+    # git_url: "https://github.com/jarviscanada/jarvis_profile_builder"
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: Performed analysis of used car sales in Europe over the past 20 years using GCP and Spark SQL. Utilized a comprehensive dataset containing over 3 million records, including attributes such as car make, model, price, mileage, fuel type, transmission, and registration year. Conducted data cleaning to remove irrelevant columns and rows containing null or empty values. Wrote Spark SQL queries to identify trends such as the most popular car makes and models across various price ranges, and determined the least preferred vehicles by users over the past 5, 10, and 20 years.
+  - name: "Schema-Tune: Noise-Driven Bias Mitigation in Transformer-based Language Models"
+    git_url: "https://github.com/omidoos/Schema-Tune"
+    description: Co-authored the research paper and helped successfully implement the Schema-Tune framework to reduce biases in large language models. The framework introduces curated and adapted noises to the input embeddings of language models to challenge the model's embedded stereotypes. I utilized various tools such as Python, PyTorch, Pandas, NumPy, and Matplotlib to help train the models and evaluate their performance. The paper has been published at the ACML 2024 conference.
+  - name: "Binary Semantic Segmentation of Drone Images"
+    description: Developed a binary semantic segmentation model using the U-Net architecture to accurately identify foreground and background components. The model was successfully trained on a dataset of drone images and their respective ground truth. The model obtained high training, validation, and testing accuracy of over 98%, showing its effectiveness.
+  - name: "Full-Stack E-commerce Platform"
+    git_url: "https://github.com/77ruthvik/EcommerceWebsite"
+    description: Developed a full-stack E-commerce website using Node.js, Express.js, MySQL, and vanilla JavaScript with HTML/CSS. Implemented User Authentication (Login/Signup), product browsing and search, shopping cart functionality, and a checkout process. Designed a MySQL database to store user accounts, product inventory, and transaction history, including the purchase quantities, dates, and total price. Built RESTful APIs for front-end and back-end integration, ensuring seamless data flow and dynamic content rendering.
+      
+#List of professional experience
+#The job description allows hiring managers to understand your job and the technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
+#The description must be more than 25 words. If your experience is not software related, please focus on soft skills and achievements (e.g. team collaboration, problem-solving, improvements, communication).
+professional_experience:
+  #Write your Jarvis role as a professional experience rather than training.
+  - title: "Software Developer"
+    company: "Jarvis"
+    duration: "April 2025-present"
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: "As a software developer, I contributed to multiple projects using technologies such as Linux, Bash scripting, PostgreSQL, Docker, and Git. I played an active role in designing, implementing, and deploying scalable solutions that met client needs. I collaborated closely with a cross-functional team in an Agile/Scrum environment, participating in sprint planning, daily stand-ups, sprint reviews, and retrospectives."
+  - title: "Research Assistant"
+    company: "Toronto Metropolitan University"
+    duration: "September 2024-December 2024"
+    description: "Collaborated with a research team to develop an innovative bias measurement metric that addresses the limitations of existing metrics to improve fairness in AI models. Implemented the project utilizing tools and technologies such as Python, PyTorch, Pandas, and NumPy. Incorporated quantum computing principles, including superposition and interference, to evaluate bias. Conducted extensive evaluations on popular LLMs, including GPT-2 and BERT, demonstrating the metric's effectiveness in detecting nuanced biases."
+
+#List of edcuation
+education: 
+  - school_name: "Toronto Metropolitan University"
+    duration: "2018-2023"
+    degree: "Bachelor of Engineering"
+    department: "Computer Engineering"
+    # optional
+    awards_achievements: 
+      - "Graduated with Distinction"
+      - "Dean's List (2018-2019, 2020-2021, 2021-2022)"
+        # - "CGPA: 3.74/4.33"
+  - school_name: "Toronto Metropolitan University"
+    duration: "2023-2024"
+    degree: "Master of Engineering"
+    department: "Electrical and Computer Engineering"
+    awards_achievements:
+      - "CGPA: 4.08/4.33" 
+
+#Optional section
+others:
+    #category
+    # - title: "Certificates"
+    #list of items
+    # bullets:
+    # - "Udacity Machine Learning (2019)"
+    # - title: "Awards"
+    # bullets:
+    # - "Winner"
+  - title: "Activities/Hobbies"
+    bullets:
+      - "Badminton Enthusiast: Played badminton regularly with friends from middle school through university during my free time. It's a sport that helps me relax and stay mentally focused."
+      - "Cycling: Passionate about cycling during the summer months, using it as an opportunity to stay active, explore my neighborhood, and discover new local spots."
