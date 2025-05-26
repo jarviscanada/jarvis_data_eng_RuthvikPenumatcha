@@ -56,11 +56,14 @@ jarvis_projects:
     # The project description allows hiring managers to understand your project and technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
     # The project description must start with an action verb (https://bit.ly/3guO98u)
     description: The Linux Cluster Monitoring Resource app has been developed for the Linux Cluster Administration (LCA) team at Jarvis to monitor the system specifications and resource usage information across 10 Linux clusters. This project has been implemented by creating a PostgreSQL database instance on a Docker container to store hardware specifications and resource usage information. Shell scripts were created to handle various tasks, such as managing the container setup and data insertion. Crontab was used to automate data collection every minute, and Git was used for version control. Through automating data collection and centralizing monitoring, the system reduces manual overhead and enhances decision-making for administrators.
+  - name: "Java Grep App"
+    git_url: "/core_java/grep"
+    description: "Developed a Java-based tool utilizing object-oriented programming principles, which functions similarly to the grep command on Linux. It recursively traverses a user-provided directory, identifies matching regex patterns the user provides, and stores the results in a file. Utilized Java Streams and Lambda expressions to optimize the performance of the application. Deployed the application by creating a Docker image using a custom Dockerfile. Used Maven for dependency management, and Git for version control."    
       # - name: "Core Java Apps"
-      # git_url: "/core_java"
-      # description:
-      # - "Twitter App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
-      # - "JDBC App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
+   # git_url: "/core_java"
+   # description:
+   #   - "Java Grep App: Developed a Java-based tool utilizing object-oriented programming principles, which functions similarly to the grep command on Linux. It recursively traverses a user-provided directory, identifies matching regex patterns the user provides, and stores the results in a file. Utilized Java Streams and Lambda expressions to optimize the performance of the application. Deployed the application by creating a Docker image using a custom Dockerfile. Used Maven for dependency management, and Git for version control."
+      #- "JDBC App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
       # - "Grep App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
       # - name: "Springboot App"
       # git_url: "/springboot"
