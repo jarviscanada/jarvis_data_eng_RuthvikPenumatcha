@@ -110,6 +110,7 @@ Description of Crontab
 
 ## Database Modeling
 - Schema of `host_info` table
+
 | Column Name | Data Type | Constraint | Description |
 |-------------|-----------|------------|-------------|
 | id | SERIAL | Primary Key | ID assigned to the host machine |
@@ -123,6 +124,7 @@ Description of Crontab
 | total_mem | INT4 | | Total memory available on the host |
 
 - Schema of `host_usage` table
+
 | Column Name | Data Type | Constraint | Description |
 |-------------|-----------|------------|-------------|
 | timestamp | TIMESTAMP | NOT NULL | Time the data is obtained |
