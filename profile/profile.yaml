@@ -80,6 +80,9 @@ jarvis_projects:
       # - name: "Cloud/DevOps"
       # git_url: "/cloud_devops"
       # description: ""
+  - name: "Python Data Analytics"
+    git_url: "/python_data_analytics"
+    description: "This project was developed for London Gift Shop (LGS), a London-based online retail business. The objective of the project is to perform data analytics on historical sales data to uncover any trends and patterns that exist, which could support the marketing team in creating targeted advertisements to improve sales. The retail data sent by the client was loaded onto the PostgreSQL database to set up the Data warehouse. Jupyter Notebook was used to perform data cleaning and exploration, utilizing popular Python libraries such as NumPy, Pandas, and Matplotlib. Various key factors were analyzed as part of the data analysis, including monthly sales data, the number of new customers added per month, and segmenting clients into various sections using RFM (Recency, Frequency, Monetary) analysis. To ensure platform independence and reproducibility, Docker was used to containerize both the PostgreSQL database and the Jupyter Notebook environments. Git was used for version control."
 
 # List of personal or academic projects
 # Feel free to add more projects
