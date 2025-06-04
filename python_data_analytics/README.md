@@ -10,7 +10,7 @@ LGS is an online website, and they utilized Azure SQL Server as their backend in
 
 ## Data Analytics and Wrangling
 - The data analysis performed for this project can be accessed in the Jupyter Notebook in this location: [Retail Data Analytics Notebook](python_data_wrangling/retail_data_analytics_wrangling.ipynb)
-- The PoC for this project focused on identifying key trends in LGS sales performance, such as the number of new customers added each month, monthly sales, total orders and cancellations each month, and RFM segmentation.
+- The PoC for this project focused on identifying key trends in LGS sales performance, including the number of new customers added each month, monthly sales, total orders and cancellations each month, and RFM (Recency, Frequency, Monetary) segmentation to categorize customers into different segments based on their spending behavior.
 - These insights provide the LGS marketing team with a strong foundation to design target marketing campaigns to improve sales. Based on the trends, they can focus on areas such as:
 ```
 - The LGS marketing team can come up with new ideas to encourage sales in months that contain the fewest overall sales numbers (eg. January, February).
