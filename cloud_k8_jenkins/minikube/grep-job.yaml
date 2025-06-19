@@ -1,0 +1,25 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: grepjavajob
+spec:
+  template:
+    spec:
+      containers:
+      - name: grepjavajob
+        image: 77ruthvik/grep:latest
+        args: [".*Romeo.*Juliet.*", "/data", "/log/grep.out"]
+        volumeMounts:
+          - name: data-volume
+            mountPath: /data
+          - name: log-volume
+            mountPath: /log
+      restartPolicy: Never
+      volumes:
+      - name: data-volume
+        persistentVolumeClaim:
+          claimName: data-pvc
+      - name: log-volume
+        persistentVolumeClaim:
+          claimName: log-pvc
+  backoffLimit: 4

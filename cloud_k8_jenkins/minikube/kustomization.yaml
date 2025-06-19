@@ -1,0 +1,3 @@
+resources:
+  - grep-job.yaml
+  - psql-deployment.yaml
