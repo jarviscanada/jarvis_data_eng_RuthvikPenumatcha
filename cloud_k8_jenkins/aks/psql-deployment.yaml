@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: linux-psql
+spec:
+  ports:
+    - protocol: TCP
+      port: 5432
+      targetPort: 5432
+  selector:
+    app: linux-psql
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: linux-psql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: linux-psql
+  template:
+    metadata:
+      labels:
+        app: linux-psql
+    spec:
+      containers:
+      - name: linux-psql
+        image: 77ruthvik/linux-db:latest
+        env:
+        - name: POSTGRES_PASSWORD
+          value: password
+        - name: POSTGRES_DB
+          value: host_agent
+        - name: POSTGRES_USER
+          value: postgres
+        - name: PGDATA
+          value: /app_data
+        ports:
+        - containerPort: 5432
