@@ -7,7 +7,7 @@ spec:
     spec:
       containers:
       - name: grepjavajob
-        image: 77ruthvik/grep:latest
+        image: acrjarvisruthvikp77.azurecr.io/grep-app:latest
         args: [".*Romeo.*Juliet.*", "/data", "/log/grep.out"]
         volumeMounts:
           - name: data-volume
