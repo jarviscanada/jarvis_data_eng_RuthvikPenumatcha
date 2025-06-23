@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: linux-psql
-        image: acrjarvisruthvikp77.azurecr.io/linux-psql-db:1750440994
+        image: acrjarvisruthvikp77.azurecr.io/linux-psql-db:1750707739
         env:
         - name: POSTGRES_PASSWORD
           value: password

@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+
+    environment {
+        app_name = 'grepjava'
+    }
+
+    stages {
+        stage('Init') {
+            steps {
+                sh 'ls'
+                sh 'az version'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'echo "building"'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo "Deploy to dev"
+            }
+        }
+    }
+}
