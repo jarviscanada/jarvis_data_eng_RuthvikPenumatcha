@@ -1,26 +1,62 @@
 pipeline {
-    agent any
-
-    environment {
-        app_name = 'grepjava'
+  agent {
+    kubernetes {
+      yaml """
+apiVersion: v1
+kind: Pod
+spec:
+  containers:
+  - name: azcli
+    image: jrvs/jenkins_agent:az_kubectl
+    command:
+    - cat
+    tty: true
+"""
+    }
+  }
+  
+  environment {
+      CLUSTER_NAME='aks-grep-linux-app'
+      RESOURCE_GROUP='rg-grep-linux-app-aks'
+  }
+  
+  stages {
+    stage('Azure Login') {
+      steps {
+        container('azcli') {
+            script {
+                sh 'az login' // will prompt if not automated
+            }
+        }
+      }
     }
 
-    stages {
-        stage('Init') {
-            steps {
-                sh 'ls'
-                sh 'az version'
+    stage('Check AKS cluster') {
+      steps {
+        container('azcli') {
+            script {
+              sh '''
+                az account show
+                az aks get-credentials --name $CLUSTER_NAME --resource-group $RESOURCE_GROUP
+                kubectl cluster-info
+              '''
             }
         }
-        stage('Build') {
-            steps {
-                sh 'echo "building"'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo "Deploy to dev"
+      }
+    }
+    
+    stage('Deploy AKS Cluster') {
+        steps {
+            container('azcli') {
+                script {
+                    sh '''
+                        cd cloud_k8_jenkins/aks/
+                        kubectl apply -k ./
+                        kubectl get all
+                    '''
+                }
             }
         }
     }
+  }
 }
