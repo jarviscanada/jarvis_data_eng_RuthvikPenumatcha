@@ -10,7 +10,11 @@ This project focuses on migrating the execution of a Java Grep Application and t
 ![Kubernetes Cluster Deployment](assets/KubernetesCluster.png)
 
 # Jenkins CI/CD pipeline
-- Jenkins is used to automate the application deployment process, enhancing the speed and reliability of application delivery. The CI/CD pipeline begins by fetching the application code from GitHub by cloning the repository. During the build stage, a new Azure Container Registry (ACR) image will be created using the Dockerfile of the application and then pushed to ACR. In the testing stage, the status of the ACR image and Kubernetes cluster will be checked to ensure they are functioning as expected. Finally, in the deploy stage, Jenkins triggers a pipeline job that logs on to Azure CLI, connects to the AKS cluster, and uses Kubectl commands to deploy the new version of the application to the cluster.
+- Jenkins is used to automate the application deployment process, enhancing the speed and reliability of application delivery.
+- The CI/CD pipeline begins by fetching the application code from GitHub by cloning the repository.
+- During the build stage, a new Azure Container Registry (ACR) image will be created using the Dockerfile of the application and then pushed to ACR.
+- In the testing stage, the status of the ACR image and Kubernetes cluster will be checked to ensure they are functioning as expected.
+- In the deploy stage, Jenkins triggers a pipeline job that logs on to Azure CLI, connects to the AKS cluster, and uses Kubectl commands to deploy the new version of the application to the cluster.
 - Jenkins Pipeline Diagram:
 ![Jenkins Pipeline](assets/JenkinsPipeline.png)
 
