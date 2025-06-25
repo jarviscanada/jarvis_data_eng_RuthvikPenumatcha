@@ -16,6 +16,7 @@ This project focuses on migrating the execution of a Java Grep Application and t
 - In the testing stage, the status of the ACR image and Kubernetes cluster will be checked to ensure they are functioning as expected.
 - In the deploy stage, Jenkins triggers a pipeline job that logs on to Azure CLI, connects to the AKS cluster, and uses Kubectl commands to deploy the new version of the application to the cluster.
 - Jenkins Pipeline Diagram:
+
 ![Jenkins Pipeline](assets/JenkinsPipeline.png)
 
 # Improvements
