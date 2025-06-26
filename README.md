@@ -6,9 +6,9 @@ I hold a Bachelor's degree in Computer Engineering with a specialization in Soft
 
 **Proficient:** Java, Python, JavaScript, Node.js, Express.js, Linux/Bash, RDBMS/SQL, Pandas/NumPy, NoSQL/MongoDB, HTML, CSS, Agile/Scrum, REST APIs, TensorFlow/PyTorch, Maven, Git
 
-**Competent:** Spark, Hive, Hadoop, Docker, React, Google Cloud Platform (GCP), Next.js, Scikit-learn/Matplotlib, Postman
+**Competent:** Spark, Hive, Hadoop, Kubernetes, Docker, React, Jenkins, Microsoft Azure, Google Cloud Platform (GCP), Next.js, Scikit-learn/Matplotlib
 
-**Familiar:** MATLAB, C, Jenkins, RabbitMQ, gRPC, VHDL, LaTeX
+**Familiar:** MATLAB, C, Postman, RabbitMQ, gRPC, VHDL, LaTeX
 
 ## Jarvis Projects
 
@@ -20,6 +20,8 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_RuthvikPen
 **Java Grep App** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_RuthvikPenumatcha/tree/master/core_java/grep)]: Developed a Java-based tool utilizing object-oriented programming principles, which functions similarly to the grep command on Linux. It recursively traverses a user-provided directory, identifies matching regex patterns the user provides, and stores the results in a file. Utilized Java Streams and Lambda expressions to optimize the performance of the application. Deployed the application by creating a Docker image using a custom Dockerfile. Used Maven for dependency management, and Git for version control.
 
 **Python Data Analytics** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_RuthvikPenumatcha/tree/master/python_data_analytics)]: This project was developed for London Gift Shop (LGS), a London-based online retail business. The objective of the project is to perform data analytics on historical sales data to uncover any trends and patterns that exist, which could support the marketing team in creating targeted advertisements to improve sales. The retail data sent by the client was loaded onto the PostgreSQL database to set up the Data warehouse. Jupyter Notebook was used to perform data cleaning and exploration, utilizing popular Python libraries such as NumPy, Pandas, and Matplotlib. Various key factors were analyzed as part of the data analysis, including monthly sales data, the number of new customers added per month, and segmenting clients into various sections using RFM (Recency, Frequency, Monetary) analysis. To ensure platform independence and reproducibility, Docker was used to containerize both the PostgreSQL database and the Jupyter Notebook environments. Git was used for version control.
+
+**Cloud Kubernetes DevOps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_RuthvikPenumatcha/tree/master/cloud_k8_jenkins)]: This project migrates an on-premises server setup to the cloud, deploying two key applications: a Java-based Grep application and the Linux Cluster Monitoring Agent applications PostgreSQL database. The migration utilized Microsoft Azure, and various Azure Services such as Virtual Machines, Load Balancers, Virtual Networks, and Scale Sets were used to ensure high availability and elasticity. The applications were containerized and deployed using Azure Kubernetes Services (AKS) for scalable orchestration. Azure Container Registry (ACR) is used to manage container images, streamlining the retrieval and deployment of recent builds, replacing traditional Docker Hub registries. A CI/CD pipeline built using Jenkins automates the deployment lifecycle, accelerating the development process and reducing manual errors. Git is employed for version control to manage codebase changes more effectively.
 
 
 ## Highlighted Projects
