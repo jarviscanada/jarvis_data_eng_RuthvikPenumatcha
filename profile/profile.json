@@ -63,8 +63,8 @@
       "name": "Cloud Kubernetes DevOps"
     },
     {
-      "description": "This project was developed to create an end-to-end ETL pipeline using Databricks. The client provided 4 years of historical sales for their business as CSV files, which were ingested into a Unity Catalog Volume. The medallion architecture was followed to ingest the raw data into bronze tables and enforce the schema. Silver tables were then created to clean, augment, and apply transformations to the data. Following this, gold tables were made by aggregating the data from silver tables. The gold tables were used to power the SQL dashboard in Databricks, which displayed the trends and patterns present in the data. Finally, a CI/CD pipeline was built using Databricks CLI and Databricks Asset Bundles (DABs).",
-      "git_url": "/databricks",
+      "description": "This project focuses on building an end-to-end ETL pipeline using Databricks. The client provided 4 years' worth of historical sales data in CSV format, which was ingested into a Unity Catalog Volume. The pipeline followed the medallion architecture to ingest, organize, and transform the data. Bronze tables were created to ingest the raw data with the schema applied. Silver tables were designed to clean, augment, and apply transformations to the data. Gold tables were made by aggregating the data from silver tables. The gold tables were used to power the SQL dashboard in Databricks, providing valuable insights into trends and patterns present in the data. Additionally, a CI/CD pipeline was implemented using Databricks CLI and Databricks Asset Bundles (DABs) to ensure smooth deployment and version control.",
+      "git_url": "/databricks/retail_sales_etl",
       "name": "Retail Sales ETL Pipeline"
     }
   ],
