@@ -1,0 +1,69 @@
+bundle:
+  name: my_project
+  uuid: 8995309f-c22c-4af0-9635-6cf52b0c9673
+
+resources:
+  jobs:
+    Databricks_Retail_Project_Job:
+      name: Databricks Retail Project Job
+      #schedule:
+        #quartz_cron_expression: "0 0 9 * * ?" #Runs everyday at 9AM
+        #timezone_id: "America/Toronto"
+      max_concurrent_runs: 2
+      tasks:
+        - task_key: Create_Bronze_Tables
+          notebook_task:
+            notebook_path: /Workspace/Users/ruthvik.penumatcha@gmail.com/Databricks
+              Project/Create Bronze Tables
+            base_parameters:
+              customer_data_path: /Volumes/workspace/retail_schema/retail_raw_data/master_customer.csv
+              products_data_path: /Volumes/workspace/retail_schema/retail_raw_data/master_product.csv
+              stores_data_path: /Volumes/workspace/retail_schema/retail_raw_data/store_data.csv
+            source: WORKSPACE
+        - task_key: Create_Silver_Tables
+          depends_on:
+            - task_key: Create_Bronze_Tables
+          notebook_task:
+            notebook_path: /Workspace/Users/ruthvik.penumatcha@gmail.com/Databricks
+              Project/Create Silver Tables
+            source: WORKSPACE
+        - task_key: Create_Gold_Tables
+          depends_on:
+            - task_key: Create_Silver_Tables
+          notebook_task:
+            notebook_path: /Workspace/Users/ruthvik.penumatcha@gmail.com/Databricks
+              Project/Create Gold Tables
+            base_parameters:
+              Top_n_customers: "50"
+            source: WORKSPACE
+        - task_key: Optimize_Gold_Tables
+          depends_on:
+            - task_key: Create_Gold_Tables
+          notebook_task:
+            notebook_path: /Workspace/Users/ruthvik.penumatcha@gmail.com/Databricks
+              Project/Optimize Performance of Gold Tables
+            source: WORKSPACE
+      queue:
+        enabled: true
+      performance_target: STANDARD
+
+targets:
+  dev:
+    # The default target uses 'mode: development' to create a development copy.
+    # - Deployed resources get prefixed with '[dev my_user_name]'
+    # - Any job schedules and triggers are paused by default.
+    # See also https://docs.databricks.com/dev-tools/bundles/deployment-modes.html.
+    mode: development
+    default: true
+    workspace:
+      host: http://127.0.0.1:7073
+
+  prod:
+    mode: production
+    workspace:
+      host: http://127.0.0.1:7073
+      # We explicitly deploy to /Workspace/Users/ruthvik.penumatcha@gmail.com to make sure we only have a single copy.
+      root_path: /Workspace/Users/ruthvik.penumatcha@gmail.com/.bundle/${bundle.name}/${bundle.target}
+    permissions:
+      - user_name: ruthvik.penumatcha@gmail.com
+        level: CAN_MANAGE

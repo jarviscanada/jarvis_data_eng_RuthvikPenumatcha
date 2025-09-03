@@ -1,0 +1,969 @@
+{
+  "datasets": [
+    {
+      "name": "e26d47e8",
+      "displayName": "customer_segmentation_city_gold",
+      "queryLines": [
+        "SELECT * FROM customer_segmentation_city_gold"
+      ],
+      "catalog": "workspace",
+      "schema": "retail_schema"
+    },
+    {
+      "name": "855e0218",
+      "displayName": "customer_segmentation_region_gold",
+      "queryLines": [
+        "SELECT * FROM customer_segmentation_region_gold"
+      ],
+      "catalog": "workspace",
+      "schema": "retail_schema"
+    },
+    {
+      "name": "b2b881a9",
+      "displayName": "daily_sales_summary_gold",
+      "queryLines": [
+        "SELECT * FROM daily_sales_summary_gold order by Order_Date asc"
+      ],
+      "catalog": "workspace",
+      "schema": "retail_schema"
+    },
+    {
+      "name": "4847fb9f",
+      "displayName": "product_sales_gold",
+      "queryLines": [
+        "SELECT * FROM product_sales_gold"
+      ],
+      "catalog": "workspace",
+      "schema": "retail_schema"
+    },
+    {
+      "name": "94b89fa6",
+      "displayName": "sales_by_customer_gold",
+      "queryLines": [
+        "SELECT * FROM sales_by_customer_gold"
+      ],
+      "catalog": "workspace",
+      "schema": "retail_schema"
+    },
+    {
+      "name": "f3c68ba2",
+      "displayName": "top_customers_gold",
+      "queryLines": [
+        "SELECT * FROM top_customers_gold LIMIT 10;"
+      ],
+      "catalog": "workspace",
+      "schema": "retail_schema"
+    },
+    {
+      "name": "27402751",
+      "displayName": "top_5_cities",
+      "queryLines": [
+        "SELECT City, Sum(Total_Customers) FROM customer_segmentation_city_gold group by City ORDER BY Sum(Total_Customers) DESC LIMIT 5"
+      ],
+      "catalog": "workspace",
+      "schema": "retail_schema"
+    },
+    {
+      "name": "9e2803b9",
+      "displayName": "sales_per_year",
+      "queryLines": [
+        "SELECT YEAR(Order_Date) as Order_Date, SUM(Total_Sales) FROM daily_sales_summary_gold GROUP BY YEAR(Order_Date)"
+      ],
+      "catalog": "workspace",
+      "schema": "retail_schema"
+    }
+  ],
+  "pages": [
+    {
+      "name": "7bace17e",
+      "displayName": "Dashboard",
+      "layout": [
+        {
+          "widget": {
+            "name": "19a64494",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "e26d47e8",
+                  "fields": [
+                    {
+                      "name": "Segment",
+                      "expression": "`Segment`"
+                    },
+                    {
+                      "name": "avg(Average_Sales)",
+                      "expression": "AVG(`Average_Sales`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "Segment",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "Segment"
+                },
+                "y": {
+                  "fieldName": "avg(Average_Sales)",
+                  "scale": {
+                    "type": "quantitative",
+                    "domain": {
+                      "max": 4000000,
+                      "min": 3000000
+                    }
+                  },
+                  "displayName": "Average Sales"
+                },
+                "color": {
+                  "fieldName": "Segment",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "Segment"
+                }
+              },
+              "frame": {
+                "title": "Total Average Sales of Products Per Customer Segment",
+                "showTitle": true
+              },
+              "mark": {
+                "colors": [
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 1
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 2
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 3
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 4
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 5
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 6
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 7
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 8
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 9
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 10
+                  }
+                ],
+                "layout": "stack"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 6,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "1bba5c13",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "e26d47e8",
+                  "fields": [
+                    {
+                      "name": "Segment",
+                      "expression": "`Segment`"
+                    },
+                    {
+                      "name": "sum(Total_Customers)",
+                      "expression": "SUM(`Total_Customers`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "Segment",
+                  "scale": {
+                    "type": "categorical",
+                    "sort": {
+                      "by": "y-reversed"
+                    }
+                  },
+                  "displayName": "Segment"
+                },
+                "y": {
+                  "fieldName": "sum(Total_Customers)",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Sum of Total_Customers"
+                },
+                "color": {
+                  "fieldName": "Segment",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "Segment"
+                }
+              },
+              "frame": {
+                "title": "Purchase Count by Customer Based on Segment",
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 6,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "a58a2ff7",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "855e0218",
+                  "fields": [
+                    {
+                      "name": "Region",
+                      "expression": "`Region`"
+                    },
+                    {
+                      "name": "avg(Average_Age)",
+                      "expression": "AVG(`Average_Age`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "Region",
+                  "scale": {
+                    "type": "categorical",
+                    "sort": {
+                      "by": "y-reversed"
+                    }
+                  },
+                  "displayName": "Region"
+                },
+                "y": {
+                  "fieldName": "avg(Average_Age)",
+                  "scale": {
+                    "type": "quantitative",
+                    "domain": {
+                      "min": 30,
+                      "max": 35
+                    }
+                  },
+                  "displayName": "Average Age"
+                }
+              },
+              "frame": {
+                "title": "Average Customer Age by Region",
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 12,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "cee82c15",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "855e0218",
+                  "fields": [
+                    {
+                      "name": "Segment",
+                      "expression": "`Segment`"
+                    },
+                    {
+                      "name": "Region",
+                      "expression": "`Region`"
+                    },
+                    {
+                      "name": "sum(Total_Customers)",
+                      "expression": "SUM(`Total_Customers`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "Region",
+                  "scale": {
+                    "type": "categorical",
+                    "sort": {
+                      "by": "y-reversed"
+                    }
+                  },
+                  "displayName": "Region"
+                },
+                "y": {
+                  "fieldName": "sum(Total_Customers)",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Sum of Total_Customers"
+                },
+                "color": {
+                  "fieldName": "Segment",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "Segment"
+                }
+              },
+              "frame": {
+                "title": "Customer Segments by Region",
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 12,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "dbe2db0b",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "b2b881a9",
+                  "fields": [
+                    {
+                      "name": "daily(Order_Date)",
+                      "expression": "DATE_TRUNC(\"DAY\", `Order_Date`)"
+                    },
+                    {
+                      "name": "sum(Total_Sales)",
+                      "expression": "SUM(`Total_Sales`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "line",
+              "encodings": {
+                "x": {
+                  "fieldName": "daily(Order_Date)",
+                  "scale": {
+                    "type": "temporal"
+                  },
+                  "displayName": "Order_Date"
+                },
+                "y": {
+                  "fieldName": "sum(Total_Sales)",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Sum of Total_Sales"
+                }
+              },
+              "frame": {
+                "title": "Total Sales Per Day Over Time",
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 18,
+            "width": 6,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "ece2032a",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "b2b881a9",
+                  "fields": [
+                    {
+                      "name": "daily(Order_Date)",
+                      "expression": "DATE_TRUNC(\"DAY\", `Order_Date`)"
+                    },
+                    {
+                      "name": "Average_Delivery_Days",
+                      "expression": "`Average_Delivery_Days`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "line",
+              "encodings": {
+                "x": {
+                  "fieldName": "daily(Order_Date)",
+                  "scale": {
+                    "type": "temporal"
+                  },
+                  "displayName": "Order_Date"
+                },
+                "y": {
+                  "fieldName": "Average_Delivery_Days",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Average_Delivery_Days"
+                }
+              },
+              "frame": {
+                "title": "Average Delivery Days Over Time",
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 24,
+            "width": 6,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "ffd55d81",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "b2b881a9",
+                  "fields": [
+                    {
+                      "name": "Order_Date",
+                      "expression": "`Order_Date`"
+                    },
+                    {
+                      "name": "Average_Discount",
+                      "expression": "`Average_Discount`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "line",
+              "encodings": {
+                "x": {
+                  "fieldName": "Order_Date",
+                  "scale": {
+                    "type": "temporal"
+                  },
+                  "displayName": "Order_Date"
+                },
+                "y": {
+                  "fieldName": "Average_Discount",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Average_Discount"
+                }
+              },
+              "frame": {
+                "title": "Average Discount Over Time",
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 30,
+            "width": 6,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "98125be5",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "4847fb9f",
+                  "fields": [
+                    {
+                      "name": "sum(Total_Sales)",
+                      "expression": "SUM(`Total_Sales`)"
+                    },
+                    {
+                      "name": "Category",
+                      "expression": "`Category`"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "pie",
+              "encodings": {
+                "angle": {
+                  "fieldName": "sum(Total_Sales)",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Sales Per Category"
+                },
+                "color": {
+                  "fieldName": "Category",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "Category"
+                }
+              },
+              "frame": {
+                "title": "Total Sales by Category",
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 36,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "4b0ddd6c",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "94b89fa6",
+                  "fields": [
+                    {
+                      "name": "Region",
+                      "expression": "`Region`"
+                    },
+                    {
+                      "name": "sum(Total_Sales)",
+                      "expression": "SUM(`Total_Sales`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "Region",
+                  "scale": {
+                    "type": "categorical",
+                    "sort": {
+                      "by": "y-reversed"
+                    }
+                  },
+                  "displayName": "Region"
+                },
+                "y": {
+                  "fieldName": "sum(Total_Sales)",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Sum of Total_Sales"
+                },
+                "color": {
+                  "fieldName": "Region",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "Region"
+                }
+              },
+              "frame": {
+                "title": "Total Sales by Region",
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 42,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "25ccb83a",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "94b89fa6",
+                  "fields": [
+                    {
+                      "name": "Region",
+                      "expression": "`Region`"
+                    },
+                    {
+                      "name": "count(Customer_ID)",
+                      "expression": "COUNT(`Customer_ID`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "Region",
+                  "scale": {
+                    "type": "categorical",
+                    "sort": {
+                      "by": "y-reversed"
+                    }
+                  },
+                  "displayName": "Region"
+                },
+                "y": {
+                  "fieldName": "count(Customer_ID)",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Number of Customers"
+                },
+                "color": {
+                  "fieldName": "Region",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "Region"
+                }
+              },
+              "frame": {
+                "title": "Customer Distribution by Region",
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 36,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "d04088ae",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "f3c68ba2",
+                  "fields": [
+                    {
+                      "name": "Rank",
+                      "expression": "`Rank`"
+                    },
+                    {
+                      "name": "Total_Sales",
+                      "expression": "`Total_Sales`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "area",
+              "encodings": {
+                "x": {
+                  "fieldName": "Rank",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "Rank"
+                },
+                "y": {
+                  "fieldName": "Total_Sales",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Total_Sales"
+                },
+                "label": {
+                  "show": false
+                }
+              },
+              "frame": {
+                "title": "Customer Rank Distribution Based on their sales",
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 48,
+            "width": 6,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "abd752fd",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "e26d47e8",
+                  "fields": [
+                    {
+                      "name": "City",
+                      "expression": "`City`"
+                    },
+                    {
+                      "name": "Average_Sales",
+                      "expression": "`Average_Sales`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "City",
+                  "scale": {
+                    "type": "categorical",
+                    "sort": {
+                      "by": "y-reversed"
+                    }
+                  },
+                  "displayName": "City"
+                },
+                "y": {
+                  "fieldName": "Average_Sales",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Average_Sales"
+                },
+                "label": {
+                  "show": true
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Average Sales Per City"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 54,
+            "width": 6,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "5883a10d",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "27402751",
+                  "fields": [
+                    {
+                      "name": "sum(sum(Total_Customers))",
+                      "expression": "SUM(`sum(Total_Customers)`)"
+                    },
+                    {
+                      "name": "City",
+                      "expression": "`City`"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "pie",
+              "encodings": {
+                "angle": {
+                  "fieldName": "sum(sum(Total_Customers))",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Total Number of Customers Per City"
+                },
+                "color": {
+                  "fieldName": "City",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "City"
+                }
+              },
+              "frame": {
+                "title": "Top 5 Cities of Customers",
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 6,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "0df397de",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "9e2803b9",
+                  "fields": [
+                    {
+                      "name": "Order_Date",
+                      "expression": "`Order_Date`"
+                    },
+                    {
+                      "name": "sum(Total_Sales)",
+                      "expression": "`sum(Total_Sales)`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "Order_Date",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Year"
+                },
+                "y": {
+                  "fieldName": "sum(Total_Sales)",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Total Sales"
+                },
+                "color": {
+                  "fieldName": "Order_Date",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Order_Date"
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Total Sales Per Year"
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 42,
+            "width": 3,
+            "height": 6
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS"
+    }
+  ],
+  "uiSettings": {
+    "theme": {
+      "widgetHeaderAlignment": "ALIGNMENT_UNSPECIFIED"
+    }
+  }
+}
